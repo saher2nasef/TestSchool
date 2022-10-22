@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+	font-family: 'Tajawal', sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.Test h1.Title{
+	font-size: 30px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.Test .Questions{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 100%;
+	counter-reset: count;
+	transition: .4s;
+}
+.Test .Questions.Active{
+	transform: scale(0);
+    opacity: 0;
+    height: 0;
+}
+.Test .Questions .Question{
+	width: 100%;
+	background: #ddd;	
+	padding: 10px 20px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	border-radius: 5px;
+	margin: 0 11px 10px  50px;
+	counter-increment: count;
+	position: relative;
+}
+.Test .Questions .Question::before  {
+    content: counter(count );
+    position: absolute;
+    top: 50%;
+    right: 101%;
+    background: #e91e63;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    transform: translateY(-50%);
+    min-width: 25px;
+    height: 26px;
+    padding: 0 8px;
+}
+.Test .Questions .Question::after{
+    content: "";
+    height: 100%;
+    width: 5px;
+    background: #03a9f4;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    border-radius: 5px;
+}
+.Test .Questions .Question .QuestionTitle{
+	width: 100%;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.Test .Questions .Question .QuestionTitle p{
+    margin-bottom: 0;
+    white-space: normal;
+    word-break: break-word
+}
+.Test .Questions .Question .Answers{
+	width: 100%;
+}
+.Test .Questions .Question .Answers form{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.Test .Questions .Question .Answers form div{
+	width: calc(100% / 4);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.Test .Questions .Question .Answers form div label{
+	margin-left: 5px;
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+#SendScore{
+	width: fit-content;
+    margin: auto;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    background: #e91e63;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    transition: .4s;
+    transform: scale(0);
+    opacity: 0;
+}
+#SendScore.Active{
+	transform: scale(1);
+    opacity: 1;
+}
+#SendScore.Active2{
+	transform: scale(0) !important;
+    opacity: 0 !important;
+}
+
+#resultExam{
+	padding: 20px;
+    background: #e91e63;
+    font-size: 40px;
+    width: fit-content;
+    border-radius: 5px;
+    transition: .4s;
+    transform: scale(0);
+    opacity: 0;
+    display: block;
+    margin: 100px auto 0;
+    color: #fff;
+    font-weight: 700;
+}
+#resultExam.Active{
+	transform: scale(1);
+    opacity: 1;
+}
+
+@media(max-width:1000px){
+	.Test .Questions {
+	    display: flex;
+	    align-items: center;
+	    justify-content: flex-start;
+	    flex-direction: column;
+	    width: 100%;
+	    counter-reset: count;
+	    transition: .4s;
+	    padding: 0 38px 0 14px;
+	}
+}
